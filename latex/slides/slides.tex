@@ -1,0 +1,41 @@
+\documentclass{beamer}
+
+\usepackage{mathtools}
+\usepackage[style=numeric-comp, sorting=none]{biblatex}
+\addbibresource{bibliographie.bib}
+
+\title{Synthèse et expériences numériques liées à un article de recherche}
+\subtitle{Conductivité thermique négative des \\ chaînes de rotors avec forçage mécanique}
+
+\author[dfrenkiel]{David Frenkiel}
+\institute{Cours 5MM50 \\ Sorbonne Université}
+
+\newcommand{\vs}{\vspace{10.0mm}}
+\setlength{\parskip}{3.0mm}
+
+\begin{document}
+
+    \input{introduction.tex}
+
+    \input{non_equilibrium.tex}
+
+    \input{article.tex}
+    \input{model.tex}
+    \input{scheme.tex}
+    \input{plots.tex}
+
+    \begin{frame}
+        \center \Huge Merci !
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]
+
+        \frametitle{Références}
+
+        \renewcommand*{\bibfont}{\scriptsize}
+        \nocite{*}
+        \printbibliography[title=All]
+
+    \end{frame}
+
+\end{document}

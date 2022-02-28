@@ -1,0 +1,35 @@
+\section{Démonstration de la temperature}
+
+
+
+
+\begin{align}
+    \frac{\partial H}{\partial q_i}
+    &= \frac{\partial}{\partial q_i} \Big[ \sum_{i=1}^N \frac{p_i^2}{2}
+    + (1 - \cos(q_i - q_{i-1})) \Big] \\
+%
+    &= \frac{\partial}{\partial q_i}
+    \Big[ \sum_{i=1}^N (1 - \cos(q_i - q_{i-1})) \Big] \\
+%
+    &= - \frac{\partial}{\partial q_i} (\cos(q_i - q_{i-1}) + \cos(q_{i+1} - q_i)) \\
+%
+    &= -  (-\sin(q_i - q_{i-1}) - \sin(q_{i+1} - q_i)(-1)) \\
+%
+    &= \sin(q_i - q_{i-1}) - \sin(q_{i+1} - q_i)
+\end{align}
+
+Pour le premier rotor ($i = 1$) on a
+\[\begin{dcases}
+    \frac{\partial H}{\partial q_1} = \sin(q_1) - \sin(q_2 - q_1)
+    & \text{si collé à la paroi} \\
+    \frac{\partial H}{\partial q_1} = -\sin(q_2 - q_1)
+    & \text{sinon}
+\end{dcases}\]
+
+Pour le dernier rotor ($i = N$) on a
+\[\begin{dcases}
+    \frac{\partial H}{\partial q_N} = \sin(q_N - q_{N-1}) + \sin(q_N)
+    & \text{si collé à la paroi} \\
+    \frac{\partial H}{\partial q_N} = \sin(q_N - q_{N-1})
+    & \text{sinon}
+\end{dcases}\]

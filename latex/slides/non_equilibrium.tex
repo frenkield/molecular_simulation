@@ -1,0 +1,246 @@
+\begin{frame}
+
+    \frametitle{Partie I \\
+        Synthèse - Dynamique hors équilibre}
+
+    Synthèse des sections 7.2, 7.3, 7.4, et 7.5 des notes de cours :
+
+    \textbf{Introduction à la physique statistique numérique}
+    \cite{stoltz_phys_stat}
+
+    Gabriel Stoltz.
+
+    \small \url{http://cermics.enpc.fr/~stoltz/Cours/intro_phys_stat.pdf}
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Synthèse - Dynamique hors équilibre}
+
+    La dynamique hors équilibre caractérise un système qui n'est pas
+    réversible. Physiquement, un tel système présente un flux d'énergie
+    (chaleur) d'une partie du système vers une autre.
+
+    Ici, on suscite une dynamique hors équilibre, et donc un flux
+    d'énergie, en appliquant au système des forçages thermiques et
+    mécaniques.
+
+    Lorsque le gradient de température est faible (et sans forçage),
+    le flux reste linéaire, et la loi de Fourier s'en applique. En
+    revanche, dès que le gradient de température est plus important,
+    la dynamique devient beaucoup plus compliquée. Il n'existe pas
+    une théorie générale dans ce cas.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Synthèse - Dynamique hors équilibre}
+
+    En générale il n'est pas possible de déterminer analytiquement
+    la mesure invariante d'un système hors équilibre. En particulier,
+    cette mesure dépend des détails de la dynamique d'une manière
+    non-triviale à cause des corrélations de longue portée.
+
+    Par exemple, pour la dynamique perturbée,
+    %
+    \[dq_t = (-V'(q) + F)dt + \sqrt{2} dW_t,\]
+    %
+    la mesure invariante $\psi_F$ est
+    %
+    \[\psi_F(q) = Z_F^{-1} \int_0^1 e^{V(q+y) - V(q) -Fy} dy.\]
+    %
+    Si $F \neq 0$, cette mesure dépend des valeurs de $V$ partout.
+
+\end{frame}
+
+
+
+%$$\psi_F(q) = Z_F^{-1} \int_0^1 e^{V(q+y) - V(q) -Fy} dy
+%= Z_F^{-1} e^{-V(q)} \int_0^1 e^{V(q+y)} e^{-Fy} dy.$$
+
+
+%Pour la mesure invariante quand F \neq 0: si on change V qq part,
+%l'expression de la mesure invariante (une sorte de convolution)
+%montre que la densité change partout, de manière non triviale ;
+%
+%En contraste avec le cas d'une mesure de Gibbs dont la densité
+%est proportionnelle à e^{-\beta V(q)} dq, et donc si on change
+%localement la valeur de V, on ne change la densité de la mesure
+%que localement (à un facteur de rescaling près).
+%
+%Le mieux pour vous en convaincre serait de faire une quadrature
+%numérique pour calculer \psi_F, de changer V localement
+%(pex ajouter un créneau à support petit), et regarder comment
+%ça change la mesure globale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% calcul flux energie - stoltz page 33
+% loi fourier
+
+%    TODO
+%    \begin{frame}
+%        \frametitle{Calcul coefficients de transport}
+%        Flux d'énergie...
+%        Température !!!!!!!!!!!!!!!!!!
+%    \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+% A very interesting question is whether nonequilibrium systems
+% are locally close to equilibrium.
+% c'est quoi ca ?
+% file:///Users/frenkield/Library/Mobile%20Documents/com~apple~CloudDocs/cours/cours-spe%CC%81cialise%CC%81s/5MM50-mole%CC%81culaire/slides/rotors-alessandra-Iacobucci.pdf
+
+
+
+% Donc... Fokker-Planck est juste l'EDP qui satisfait la mesure.
+
+
+% sections 7.2 à 7.4 [et j'aurais discuté qq éléments de la section 7.5]
+
+
+%\begin{frame}
+%
+%    \frametitle{Dynamique hors équilibre}
+%
+%    La dynamique hors équilibre caractérise un système qui n'est pas
+%
+%    \begin{equation}
+%        \begin{dcases}
+%            dq_{t} = M^{-1} p_{t} d t \\
+%            dp_{t} = \left(-\nabla V\left(q_{t}\right) + \eta F\right)
+%            dt-\gamma M^{-1} p_{t} d t + \sqrt{\frac{2 \gamma}{\beta}} dW_{t}
+%        \end{dcases}
+%        \label{eq:dynamique}
+%    \end{equation}
+%
+%    % It is precisely because the perturbation is not of gradient type that
+%    % some particle flux can appear in the steady-state.
+%
+%    % Attaching the chain on one side is important to remove the translation invariance of the whole system.
+%
+%    % η, and the proportionality constant is called the mobility.
+%
+%
+%    We believe that there exists a unique smooth station-ary measure for the
+%    dynamics (2). However, as far as weknow, there is no rigorous result in
+%    this direction for ro-tor chains, even in the caseF= 0. Indeed, the
+%    standardtechniques (see for instance [11, 12]) used to prove exis-tence
+%    and uniqueness of an invariant measure for chainsof oscillators under
+%    thermal forcing do not apply here
+%
+%
+%    Some interesting relations can nonetheless be obtainedunder
+%    the assumption that the stationary state exists.
+%
+%
+%    % IfF= 0 andTL=TR=T, the system is inequi-librium, and the unique stationary measure is given bythe Gibbs measure
+%
+%\end{frame}
+
+
+%
+%        The Langevin dynamics may be seen as some modification of the Hamiltonian dynamics with
+%        two added components: a damping term −γ(qt)M−1pt dt (dissipation) and a random forcing term
+%        σ(qt)dWt (fluctuation). The energy dissipation due to damping is compensated by the random
+%
+%        stoltz page 33
+
+
+%Of course, to reach some steady-state, some dissipation
+%mechanism has to be considered as well, otherwise the external forcing may
+%lead to an uncontrolled growth of the energy of the system.
+
+
+%    Les propriétés thermodynamiques des états stationnaires hors équilibre
+%    sont très peu comprises. Ces états sont généralement caractérisés par
+
+%    des courants de quantités conservées (telles que l’énergie), qui circulent
+%    dans le système. Lorsque les états stationnaires sont proches des états
+%    d’équilibre, c’est-à-dire quand les perturbations sont de faible intensité,
+%    la théorie de la réponse linéaire est efficace et explique les phénomènes
+%    macroscopiques communs tels que la loi de Fourier. Ainsi, dans un système
+%    en contact avec deux thermostats à températures différentes, si la différence
+%    entre les deux températures est faible, le flux de chaleur est proportionnel
+%    au gradient thermique. D’autre part, il n’y a pas de théorie générale pour
+%    décrire les systèmes dans un état stationnaire loin de l’équilibre, et les
+%    propriétés macroscopiques correspondantes semblent dépendre des détails
+%    spécifiques de la dynamique.
+
+%    A traditional way to implement the interaction with reservoirs amounts
+%to introducing simul-taneously random forces and dissipation according
+%to the generalprescription of fluctuation-dissipation theorem. This could
+%be regarded as the limit case of the previous model whenγ±becomes very large.
+%Consequently, the reservoirs are not affected by the system dynamics. In
+%the simple case of an equal-mass chain, this results in the following set
+%of Langevin equations
+
+%    \gamma >0 determines the strength of the coupling to the thermostat
+% (fluctuation-diffusion).
+
+% In all schemes of heat baths there is at least one parameter controlling
+%the coupling strength:let us generically call itg. It can either be the
+%inverse of the average time between subsequentcollisions, or the
+%dissipation rate λ in the Langevin equation
+
+% https://arxiv.org/pdf/cond-mat/0112193.pdf page 15
+
+% Ornstein-Uehlenbeck process
+
+
+% Another prototypical feature of the Langevin equation is the occurrence of
+%the damping coefficient λ {\displaystyle \lambda } \lambda in the correlation
+%function of the random force, a fact also known as Einstein relation.
+
+
+% For example, Albert Einstein noted in his 1905 paper on Brownian motion
+%that the same random forces that cause the erratic motion of a particle
+%in Brownian motion would also cause drag if the particle were pulled through
+%the fluid. In other words, the fluctuation of the particle at rest has the
+%same origin as the dissipative frictional force one must do work against,
+%if one tries to perturb the system in a particular direction.
+
+% fluctuation-dissipation
+
+
+% hors equilibre - constats interressants
+% calcul temperature (pdf utile - "energy continuity equation")
+% loi fourier
+% thermostat
+% flux d'energie total
+% forcage modelise quoi ???????????? c'est dans un de ces articles......
+
+
+%    \bibliographystyle{plain}
+%    \bibliography{sample}
+%    \printbibliography

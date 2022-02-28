@@ -1,0 +1,119 @@
+\section{Hamiltonien}
+
+
+\begin{align}
+    \frac{\partial H}{\partial q_i}
+    &= \frac{\partial}{\partial q_i} \Big[ \sum_{i=1}^N \frac{p_i^2}{2}
+    + (1 - \cos(q_i - q_{i-1})) \Big] \\
+%
+    &= \frac{\partial}{\partial q_i}
+    \Big[ \sum_{i=1}^N (1 - \cos(q_i - q_{i-1})) \Big] \\
+%
+    &= - \frac{\partial}{\partial q_i} (\cos(q_i - q_{i-1}) + \cos(q_{i+1} - q_i)) \\
+%
+    &= -  (-\sin(q_i - q_{i-1}) - \sin(q_{i+1} - q_i)(-1)) \\
+%
+    &= \sin(q_i - q_{i-1}) - \sin(q_{i+1} - q_i)
+\end{align}
+
+Pour le premier rotor ($i = 1$) on a
+\[\begin{dcases}
+    \frac{\partial H}{\partial q_1} = \sin(q_1) - \sin(q_2 - q_1)
+    & \text{si collé à la paroi} \\
+    \frac{\partial H}{\partial q_1} = -\sin(q_2 - q_1)
+    & \text{sinon}
+\end{dcases}\]
+
+Pour le dernier rotor ($i = N$) on a
+\[\begin{dcases}
+    \frac{\partial H}{\partial q_N} = \sin(q_N - q_{N-1}) + \sin(q_N)
+    & \text{si collé à la paroi} \\
+    \frac{\partial H}{\partial q_N} = \sin(q_N - q_{N-1})
+    & \text{sinon}
+\end{dcases}\]
+
+
+
+\section{Générateur infinitésimal}
+
+$$P_t f(x) = \mathbb{E}_x [f(q_1(t), ..., q_N(t); p_1(t), ..., p_N(t))]$$
+
+
+
+Soit $\phi_t(x) = (q(t), p(t))$. Alors,
+$$P_t f(x) = f(\phi_t(x)) ???$$
+
+$$Lf(x) = \lim_{t \rightarrow 0} \frac{P_t f(x) - f(x)}{t}$$
+
+Donc,
+\begin{align}
+Lf(x) &= \frac{\partial}{\partial t} f(\phi_t(x))
+= \sum \frac{\partial f}{\partial q_i} \frac{\partial q_i}{\partial t}
++ \sum \frac{\partial f}{\partial p_i} \frac{\partial p_i}{\partial t} \\
+%
+&= \sum \frac{\partial f}{\partial q_i} \dot q_i
++ \sum \frac{\partial f}{\partial p_i} \dot p_i \\
+%
+&= \nabla_q f \cdot \dot q + \nabla_p f \cdot \dot p \\
+&= \nabla_q f \cdot \nabla_p H - \nabla_p f \cdot \nabla_q H \\
+%&= \nabla_q f \cdot \nabla_p H - \nabla_p f \cdot \nabla V \\
+&= \nabla_p H \cdot \nabla_q f - \nabla V \cdot \nabla_p f \\
+& \implique L = \nabla_p H \cdot \nabla_q - \nabla V \cdot \nabla_p
+%
+%&= p \cdot \nabla_q f + \nabla_p f \cdot \dot p \\
+%&= p \cdot \nabla_q f + \nabla_p f \cdot \nabla_p H
+\end{align}
+
+\newpage
+Donc.............
+
+1) Hamiltonien $H$ (qui peut inclure des termes stochastiques)
+
+2) $\phi_t(x) = (q(t), p(t))$ solution de $H$ à partir de $x$
+
+3) $f(\phi_t(x)) = f(q(t), p(t))$ une fonction d'etat qu'on veut calculer
+
+4) $Lf = \frac{\partial}{\partial t} f
+   = \nabla_p H \cdot \nabla_q f - \nabla_q H \cdot \nabla_p f$
+
+5) $L = \nabla_p H \cdot \nabla_q - \nabla_q H \cdot \nabla_p$
+
+6) $\frac{\partial}{\partial t} f = Lf \implique f = e^{tL} f_0$
+
+\vspace{3.0mm}
+Et puis...
+
+1) Si $f$ est une fonction dont on veut calculer l'integral (l'esperance)
+par rapport à une mesure (inconnue)
+
+2) Et $\phi_t$ est un processus stochastique lié à cette mesure - comment ?
+
+3) Donc on peut juste calculer $\frac{1}{N} \sum f(\phi_t)$ ???
+
+\vspace{3.0mm}
+En fait !!!!!!!!!!!!!!!!!!!!!!
+
+Le generateur est juste la dérivé de l'esperance de la formule d'ito ?????
+
+$$
+\mathrm{d}(f(X_t,t)) = \frac{\partial f}{\partial t}(X_t,t)\mathrm{d}t
++ \frac{\partial f}{\partial x}(X_t,t)\mathrm{d}X_t
++ \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(X_t,t)\sigma_t^2\mathrm{d}t
+$$
+
+$$
+    dX_t= \mu_t\,\mathrm{d}t + \sigma_t\,\mathrm{d}B_t
+$$
+
+\begin{align}
+    dq_t &= -\nabla V(q_t) dt + \sqrt{\frac{2}{\beta}} dW_t \\
+    \implique df &= \frac{\partial f}{\partial t}dt
+    + \frac{\partial f}{\partial x}
+    \left( -\nabla V(q_t) dt + \sqrt{\frac{2}{\beta}} dW_t \right)
+    + \ud \frac{\partial^2 f}{\partial x^2}   \frac{2}{\beta} dt \\
+%
+    &= \frac{\partial f}{\partial t}dt
+    + \frac{\partial f}{\partial x}
+    \left( -\nabla V(q_t) dt + \sqrt{\frac{2}{\beta}} dW_t \right)
+    + \frac{1}{\beta} \frac{\partial^2 f}{\partial x^2} dt \\
+\end{align}
