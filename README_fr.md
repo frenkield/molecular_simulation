@@ -1,11 +1,5 @@
-# Molecular Dynamics - Sorbonne University
-
-This project contains Julia code, notes (LaTex), and a presentation (LaTex)
-for a course on Molecular Dynamics at Sorbonne University.
-
-<!-- TODO - translate all this to English -->
-
-## Conductivité thermique négative des chaînes de rotors avec forçage mécanique
+Conductivité thermique négative des chaînes de rotors avec forçage mécanique
+============================================================================
 
 Prérequis :
 
@@ -26,33 +20,33 @@ nécessite le chargement de plusieurs bibliothèques. Ce chargement dure
 quelques secondes. En exécutant le code depuis le Julia REPL, après la
 première exécution, le code s'exécute beaucoup plus rapidement.
 
-## Moment cinétique moyenne
+============================================================================
 
 Afficher le moment cinétique moyenne de la chaîne depuis le Julia REPL :
 
     include("src/plots/plot_average_momentum.jl
 
-## Erreur
+============================================================================
 
 Afficher l'erreur entre la loi jointe des distances/impulsions et le produit
 tensoriel des distances/impulsions depuis le Julia REPL :
 
     include("src/plots/plot_distribution_error.jl
 
-## Flux d'énergie
+============================================================================
 
 Afficher le flux d'énergie depuis le Julia REPL :
 
     include("src/plots/plot_energy_current.jl
 
-## Flux d'énergie normale
+============================================================================
 
 Afficher le flux d'énergie "normale" (calculé avec plot_energy_current.jl)
 depuis le Julia REPL :
 
     include("src/plots/plot_energy_current_normal.jl
 
-## Flux d'énergie étrange
+============================================================================
 
 Afficher le flux d'énergie "étrange" (calculé avec plot_energy_current.jl)
 depuis le Julia REPL :
